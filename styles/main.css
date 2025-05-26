@@ -1,18 +1,15 @@
-/* theoryofsilence/styles/main.css - Mobile Optimized & Centered */
+/* theoryofsilence/styles/main.css - Fixed Centering */
 :root {
   /* Color Palette */
   --black: #000000;
   --dark-bg: #0a0a0a;
   --pure-white: #ffffff;
-  --soft-white: #f8f8f8;
   --light-gray: #e0e0e0;
-  --medium-gray: #aaaaaa;
   --highlight-purple: #9d7cff;
-  --highlight-pink: #ff7eb9;
   --highlight-blue: #7ec6ff;
   
   /* Spacing */
-  --mobile-padding: 16px;
+  --mobile-padding: 20px;
 }
 
 /* Base Reset */
@@ -22,45 +19,29 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-}
-
 /* Core Styles */
 body {
   background-color: var(--dark-bg);
   color: var(--pure-white);
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 
-               sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   padding: 0 var(--mobile-padding);
 }
 
 /* Layout */
 .silence-container {
-  width: 100%;
   max-width: 800px;
+  margin: 0 auto;
   padding: 40px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .silence-text {
-  width: 100%;
   opacity: 1;
-  text-align: center;
 }
 
-/* Typography */
+/* Typography - Left-aligned with centered highlights */
 .animate-title {
   font-size: clamp(2rem, 9vw, 3rem);
   font-weight: 300;
@@ -68,18 +49,15 @@ body {
   margin-bottom: 1.5rem;
   line-height: 1.2;
   color: var(--pure-white);
-  text-transform: uppercase;
+  text-align: left;
 }
 
 .animate-subtitle {
   font-size: clamp(1.1rem, 5vw, 1.3rem);
   font-weight: 350;
   margin-bottom: 2.5rem;
-  color: var(--medium-gray);
-  letter-spacing: 0.3px;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  color: var(--light-gray);
+  text-align: left;
 }
 
 .animate-paragraph {
@@ -87,29 +65,33 @@ body {
   margin-bottom: 1.5rem;
   font-weight: 300;
   color: var(--light-gray);
-  letter-spacing: 0.1px;
+  text-align: left;
+}
+
+/* Centered Elements Only */
+.animate-highlight,
+.animate-dates {
   text-align: center;
-  padding: 0 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .animate-highlight {
   font-size: clamp(1rem, 5vw, 1.2rem);
-  margin: 2rem auto;
+  margin: 2.5rem auto;
   color: var(--highlight-purple);
   font-style: italic;
   font-weight: 350;
   line-height: 1.4;
-  max-width: 85%;
-  text-align: center;
+  max-width: 90%;
 }
 
 .animate-dates {
   font-size: clamp(0.95rem, 4vw, 1.1rem);
   margin-top: 3rem;
-  letter-spacing: 0.5px;
   color: var(--highlight-blue);
-  text-align: center;
-  padding: 0 15px;
+  letter-spacing: 0.5px;
 }
 
 /* Character Elements */
@@ -118,41 +100,24 @@ body {
   opacity: 1;
 }
 
-/* Mobile Optimizations */
-@media (max-width: 480px) {
-  body {
-    padding: 0 12px;
-  }
-  
+/* Mobile Adjustments */
+@media (max-width: 768px) {
   .silence-container {
     padding: 30px 0;
   }
   
-  .animate-title {
-    margin-bottom: 1.2rem;
-    letter-spacing: 0.8px;
-  }
-  
-  .animate-subtitle {
-    margin-bottom: 2rem;
-    max-width: 95%;
-  }
-  
   .animate-highlight {
-    margin: 1.8rem auto;
-    max-width: 90%;
+    margin: 2rem auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --mobile-padding: 15px;
   }
   
   .animate-paragraph {
     margin-bottom: 1.3rem;
-    padding: 0 8px;
-  }
-}
-
-/* Very small devices (e.g. iPhone SE) */
-@media (max-width: 320px) {
-  .animate-paragraph,
-  .animate-highlight {
-    font-size: clamp(0.9rem, 1rem, 1.1rem);
   }
 }
