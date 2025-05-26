@@ -1,0 +1,74 @@
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.silence-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.silence-text {
+  opacity: 0;
+}
+
+/* Typography */
+.animate-title {
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.animate-subtitle {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  font-weight: 300;
+  margin-bottom: 3rem;
+  color: #aaa;
+}
+
+.animate-paragraph {
+  font-size: clamp(1rem, 3vw, 1.1rem);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.animate-highlight {
+  font-size: clamp(1.1rem, 4vw, 1.3rem);
+  margin: 2rem 0;
+  color: #fff;
+  font-style: italic;
+}
+
+.animate-dates {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  margin-top: 3rem;
+  letter-spacing: 1px;
+  color: #aaa;
+}
+
+.char {
+  display: inline-block;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .silence-container {
+    padding: 20px 15px;
+  }
+  
+  .animate-title {
+    margin-bottom: 1.5rem;
+  }
+}
